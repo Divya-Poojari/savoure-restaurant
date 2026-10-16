@@ -34,15 +34,6 @@ const reveal = {
   },
 };
 
-const sectionReveal = {
-  hidden: { opacity: 0, y: 32 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: easeLuxury },
-  },
-};
-
 const cardReveal = {
   hidden: { opacity: 0, y: 30, scale: 0.98 },
   visible: {
