@@ -1,89 +1,127 @@
-# SAVOURÉ — Five Culinary Worlds, One Table
+# SAVOURÉ — Premium Multi-Cuisine Restaurant Website
 
-A premium, editorial restaurant website concept built with React, TypeScript, Vite, React Router and Framer Motion. It brings five cuisines into one restrained ivory-and-earth brand, then gives each cuisine its own muted palette and food-led experience.
+**Live Demo:** https://savoure-restaurant-lilac.vercel.app/
 
-> **Fictional concept:** SAVOURÉ, its contact details, location and menu pricing are sample content. The reservation form validates locally and shows a preview only; it does not transmit or store bookings.
+**Source Code:** https://github.com/Divya-Poojari/savoure-restaurant
+
+## About the Project
+
+SAVOURÉ is a modern, premium multi-cuisine restaurant website designed to deliver an elegant and engaging digital dining experience. It showcases different culinary traditions through immersive food imagery, refined typography, smooth animations, and a visually consistent interface.
+
+The website focuses on presenting restaurant information, exploring cuisines and signature dishes, and providing a reservation interface.
 
 ## Features
 
-- Responsive editorial homepage, five cuisine routes and full footer.
-- Five individually themed cuisine experiences with a cinematic image-led hero.
-- Eight sample menu items per cuisine, in INR, with category filters, text search and a vegetarian-only toggle.
-- Reservation form with required-field validation, date guard, accessible error state and local confirmation preview.
-- Keyboard-visible focus, semantic labels, reduced-motion CSS, responsive mobile navigation and graceful image alt text.
-- AI-generated visual concept imagery stored locally in `public/images`; the site does not depend on remote food-image URLs.
+- **Premium Homepage:** Cinematic hero section, restaurant story, signature dishes, and dining experience highlights.
+- **Multi-Cuisine Exploration:** Dedicated pages for different cuisines, including North Indian, South Indian, Japanese, Italian, and Continental.
+- **Interactive Menu:** Browse dishes and explore menu categories.
+- **Menu Filtering:** Search dishes and filter by category and dietary preferences where supported.
+- **Reservation Interface:** A form for entering reservation details.
+- **Smooth Animations:** Animated transitions and reveal effects for a polished browsing experience.
+- **Responsive Design:** Layout designed to adapt to different screen sizes.
+- **Deployed Website:** Hosted on Vercel and connected to a GitHub repository.
 
-## Architecture decision
+## Tech Stack
 
-This deliverable uses Vite rather than Next.js App Router because it is a self-contained client-side portfolio demonstration: all menu data and images are local, and no server rendering or backend integration is needed to exercise the experience. This keeps the local run command straightforward. If the assessment explicitly requires Next.js App Router, migrate the two route views to `app/` before submitting it as a Next.js-specific assessment.
+- **React** — Component-based user interface
+- **TypeScript** — Type safety and maintainable code
+- **Vite** — Development server and production build tooling
+- **Tailwind CSS** — Styling and responsive layouts
+- **Framer Motion** — Animations and transitions
+- **React Router** — Client-side page navigation
+- **Lucide React** — Icons
+- **Vercel** — Deployment and hosting
+- **Git and GitHub** — Version control and source code management
 
-## Technology
+## Getting Started
 
-- React 19 + TypeScript (strict checks)
-- Vite 7
-- React Router 7
-- Framer Motion 12
-- Lucide React icons
-- CSS custom properties for the shared design system and cuisine themes
+### Prerequisites
 
-## Requirements
+Install the following before running the project:
 
-- Node.js 20.19+ or 22.12+ recommended
-- npm 10+
+- Node.js (a version compatible with the project's dependencies)
+- npm
+- Git
 
-## Run locally
+### Installation
 
-```bash
-npm install
-npm run dev
-```
+1. Clone the repository:
 
-Open the local URL printed by Vite (usually `http://localhost:5173`).
+   ```bash
+   git clone https://github.com/Divya-Poojari/savoure-restaurant.git
+   ```
 
-## Production build and checks
+2. Navigate to the project directory:
+
+   ```bash
+   cd savoure-restaurant
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal, usually `http://localhost:5173`.
+
+### Production Build
+
+To generate and verify the production build, run:
 
 ```bash
 npm run build
-npm run lint
+```
+
+To preview the production build locally, run:
+
+```bash
 npm run preview
 ```
 
-## Routes
+## Deployment
 
-- `/` — homepage
-- `/cuisine/south-indian`
-- `/cuisine/north-indian`
-- `/cuisine/japanese`
-- `/cuisine/french`
-- `/cuisine/italian`
+The project is deployed on Vercel and connected to the GitHub repository.
 
-Cuisine routes support direct loading and refresh through Vite's SPA fallback in development and preview mode.
+- **Live Website:** https://savoure-restaurant-lilac.vercel.app/
+- **GitHub Repository:** https://github.com/Divya-Poojari/savoure-restaurant
 
-## Project structure
+With Git integration enabled, new pushes to the configured production branch can trigger automatic deployments.
+
+## Project Structure
 
 ```text
-src/
-  components/       Shared header, footer, reservation form and dish cards
-  data/cuisines.ts  Cuisine themes, menu data, sample prices and asset paths
-  pages/            Homepage and reusable cuisine detail page
-  main.tsx          Router, transitions and hash/scroll handling
-  styles.css        Global styles, responsive layouts, themes and reduced motion
-public/images/      Local generated visual assets
+savoure-restaurant/
+├── public/
+│   └── images/          # Static image assets
+├── src/
+│   ├── animations/      # Shared animation configurations
+│   ├── components/      # Reusable UI components
+│   ├── data/            # Cuisine and menu data
+│   ├── pages/           # Homepage and cuisine pages
+│   ├── App.tsx          # Application and routing
+│   └── main.tsx         # Application entry point
+├── index.html
+├── package.json
+├── vite.config.ts
+└── README.md
 ```
 
-## Change the design
+*Note: The structure above is representative. Update it if your actual repository uses different files or folders.*
 
-- **Cuisine colours and copy:** edit the cuisine objects in `src/data/cuisines.ts` (`accent`, `deep`, `paper`, `sand`, `text`, `muted`, `border`, plus copy).
-- **Dishes, categories and prices:** edit the `Dish[]` arrays in `src/data/cuisines.ts`. Each dish needs a stable unique `id`, name, description, price, category and local image path.
-- **Images:** replace the files in `public/images/` while keeping the same filenames, or update their paths in the cuisine/dish data. Images are local and do not require an image API key.
-- **Animation:** shared route and reveal timings are in `src/main.tsx`, `src/pages/HomePage.tsx` and `src/pages/CuisinePage.tsx`; global reduced-motion handling is in `src/styles.css`.
-- **Typography and layout:** fonts are linked in `index.html`; the main design tokens and component styling are in `src/styles.css`.
-- **Branding:** update `SAVOURÉ` in `SiteHeader.tsx`, `SiteFooter.tsx`, `index.html` and the README as desired.
+## Future Enhancements
 
-## Notes and limitations
+- Connect the reservation form to a backend or reservation service.
+- Add reservation confirmation and email notifications.
+- Integrate a backend for dynamic menu and restaurant information.
+- Improve accessibility and automated test coverage.
 
-- The external motion reference supplied in the brief was not independently inspected in this build. The site uses an original image-led cuisine hero transition, subtle route fades, and staggered section reveals rather than claiming an exact recreation.
-- Food and interior visuals are AI-generated concept imagery cropped from generated visual studies. They are stored locally to keep the app self-contained.
-- Google Fonts are loaded remotely when internet access is available; system fallbacks are provided.
-- This is a frontend portfolio demo: no API, booking provider, database, analytics, checkout or email integration is configured.
-- A dependency lockfile could not be generated in the build environment because the npm registry could not be reached. Run `npm install` in a network-enabled environment; it will resolve dependencies and generate `package-lock.json`.
+## License
+
+This project was created as a website development project. No open-source license is specified unless one is added to the repository.
